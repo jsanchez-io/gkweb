@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grant K | Official Site</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        steelbg: '#181c24',
+                        slatecard: '#222834',
+                        slatelight: '#2d3546',
+                        neonPurple: '#a855f7',
+                        neonCyan: '#06b6d4',
+                        accentPink: '#ec4899',
+                        platinumText: '#f1f5f9',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Anton', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-purple': '0 0 20px rgba(168, 85, 247, 0.4)',
+                        'neon-cyan': '0 0 20px rgba(6, 182, 212, 0.4)',
+                        'neon-glow': '0 0 25px rgba(168, 85, 247, 0.5), 0 0 35px rgba(6, 182, 212, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Sleek Metallic Steel Gradient & Light Ambient Mesh Backgrounds */
+        body {
+            background-color: #181c24;
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+
+        .bg-mesh-steel {
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(168, 85, 247, 0.25) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(6, 182, 212, 0.2) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(236, 72, 153, 0.15) 0px, transparent 50%),
+                linear-gradient(135deg, #1e2430 0%, #13171f 100%);
+        }
+
+        .glass-panel {
+            background: rgba(34, 40, 52, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .glass-panel-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-panel-hover:hover {
+            border-color: rgba(6, 182, 212, 0.5);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .neon-text-glow {
+            text-shadow: 0 0 15px rgba(6, 182, 212, 0.7), 0 0 30px rgba(168, 85, 247, 0.5);
+        }
+
+        /* Scanline Texture Overlay */
+        .scanlines {
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0, 0, 0, 0.2) 50%,
+                rgba(0, 0, 0, 0.2)
+            );
+            background-size: 100% 4px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #181c24;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-neonCyan selection:text-black">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- Sticky Navigation Bar -->
+    <header id="main-nav" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 glass-panel border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-neonPurple to-neonCyan p-0.5 shadow-neon-purple group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-slatecard rounded-[7px] flex items-center justify-center font-display text-xl tracking-wider text-white">
+                        GK
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display text-2xl tracking-widest text-white group-hover:text-neonCyan transition-colors">
+                        GRANT <span class="text-neonCyan">K</span>
+                    </span>
+                    <span class="text-[9px] uppercase tracking-[0.25em] text-neonPurple font-bold -mt-1">BIG DADDY PROMOTIONS</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wider text-gray-200 uppercase">
+                <a href="#schedule" class="hover:text-neonCyan transition-colors py-2 relative group">
+                    Schedule
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-neonCyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#bio" class="hover:text-neonCyan transition-colors py-2 relative group">
+                    Bio & Stats
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-neonCyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#gallery" class="hover:text-neonCyan transition-colors py-2 relative group">
+                    Gallery
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-neonCyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#store" class="hover:text-neonCyan transition-colors py-2 relative group">
+                    Store
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-neonCyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#booking" class="hover:text-neonCyan transition-colors py-2 relative group">
+                    EPK & Booking
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-neonCyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+
+            <!-- Action CTA Button -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <button onclick="openModal('fan-club-modal')" class="px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest bg-gradient-to-r from-neonPurple to-neonCyan text-white shadow-neon-purple hover:shadow-neon-glow hover:scale-105 active:scale-95 transition-all duration-300">
+                    <i class="fa-solid fa-crown mr-2"></i>[JOIN FAN CLUB]
+                </button>
+            </div>
+
+            <!-- Mobile Menu Trigger -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-200 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slatecard border-b border-white/10 px-6 py-6 space-y-4">
+            <a href="#schedule" class="mobile-link block text-lg font-bold tracking-wide uppercase text-gray-200 hover:text-neonCyan">Schedule</a>
+            <a href="#bio" class="mobile-link block text-lg font-bold tracking-wide uppercase text-gray-200 hover:text-neonCyan">Bio & Stats</a>
+            <a href="#gallery" class="mobile-link block text-lg font-bold tracking-wide uppercase text-gray-200 hover:text-neonCyan">Gallery</a>
+            <a href="#store" class="mobile-link block text-lg font-bold tracking-wide uppercase text-gray-200 hover:text-neonCyan">Store</a>
+            <a href="#booking" class="mobile-link block text-lg font-bold tracking-wide uppercase text-gray-200 hover:text-neonCyan">EPK / Booking</a>
+            <button onclick="openModal('fan-club-modal')" class="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-widest bg-gradient-to-r from-neonPurple to-neonCyan text-white shadow-neon-purple">
+                [JOIN FAN CLUB]
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen pt-24 flex items-center justify-center overflow-hidden bg-mesh-steel">
+        <!-- Ambient Animated Particles Canvas -->
+        <canvas id="hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-50 z-0"></canvas>
+
+        <!-- Dynamic Lighting Effect Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-neonPurple/20 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[450px] h-[450px] bg-neonCyan/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="absolute inset-0 scanlines opacity-20 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center flex flex-col items-center justify-center">
+            
+            <!-- Promotion Badge -->
+            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-panel border-neonCyan/50 text-neonCyan text-xs sm:text-sm font-bold tracking-widest uppercase mb-6 shadow-neon-cyan animate-pulse">
+                <i class="fa-solid fa-star"></i>
+                <span>BIG DADDY PROMOTIONS</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="font-display text-6xl sm:text-8xl md:text-9xl tracking-tight leading-none text-white drop-shadow-2xl mb-4">
+                GRANT <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonPurple via-neonCyan to-accentPink neon-text-glow">K</span>
+            </h1>
+
+            <!-- Example Slogan Banner -->
+            <div class="mb-10 max-w-3xl">
+                <p class="text-xl sm:text-3xl font-extrabold text-white tracking-wider mb-1">
+                    &ldquo;UNSTOPPABLE FORCE&rdquo;
+                </p>
+                <span class="inline-block text-[11px] font-bold uppercase tracking-widest px-3 py-0.5 rounded-md bg-neonPurple/30 text-neonPurple border border-neonPurple/40">
+                    [Example Slogan]
+                </span>
+            </div>
+
+            <!-- Dual Action CTAs -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                <a href="#schedule" class="w-full sm:w-auto px-8 py-4 rounded-full font-extrabold text-sm uppercase tracking-widest bg-neonCyan text-slatecard hover:bg-white hover:shadow-neon-cyan transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-ticket text-lg"></i>
+                    <span>GET TICKETS</span>
+                </a>
+
+                <button onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ')" class="w-full sm:w-auto px-8 py-4 rounded-full font-extrabold text-sm uppercase tracking-widest glass-panel text-white border-white/20 hover:border-neonPurple hover:text-neonPurple hover:shadow-neon-purple transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-circle-play text-lg text-neonPurple"></i>
+                    <span>WATCH LATEST PROMO</span>
+                </button>
+            </div>
+
+            <!-- Live Status Quick Bar -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl text-left">
+                <div class="glass-panel p-4 rounded-2xl border-white/10">
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-gray-300 block mb-1">Height</span>
+                    <span class="font-display text-xl text-neonCyan">5 FT 7 IN</span>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl border-white/10">
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-gray-300 block mb-1">Hometown</span>
+                    <span class="font-display text-xl text-white">EGG HARBOR, NJ</span>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl border-white/10">
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-gray-300 block mb-1">Promotion</span>
+                    <span class="font-display text-xl text-neonPurple">BIG DADDY PROMO</span>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl border-white/10">
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-gray-300 block mb-1">Status</span>
+                    <span class="font-display text-xl text-accentPink">MAIN EVENT</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LIVE APPEARANCES & TOUR SCHEDULE -->
+    <section id="schedule" class="py-24 relative bg-steelbg border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-white/10">
+                <div>
+                    <span class="text-neonCyan text-xs font-bold tracking-[0.3em] uppercase block mb-2">LIVE TOUR & SHOWS</span>
+                    <h2 class="font-display text-4xl sm:text-5xl text-white tracking-wide">UPCOMING SHOWDOWNS</h2>
+                </div>
+                <p class="text-gray-300 text-sm max-w-md mt-4 md:mt-0">
+                    Catch <span class="text-white font-semibold">Grant K</span> live at upcoming Big Daddy Promotions Pay-Per-Views, TV tapings, and meet-and-greets.
+                </p>
+            </div>
+
+            <!-- Schedule Filter Buttons -->
+            <div class="flex flex-wrap items-center gap-3 mb-8">
+                <button onclick="filterSchedule('all')" class="schedule-filter-btn active px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-neonPurple text-white shadow-neon-purple transition-all">All Events</button>
+                <button onclick="filterSchedule('ppv')" class="schedule-filter-btn px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider glass-panel text-gray-200 hover:text-white hover:border-neonCyan transition-all">Big Daddy PPV</button>
+                <button onclick="filterSchedule('live')" class="schedule-filter-btn px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider glass-panel text-gray-200 hover:text-white hover:border-neonCyan transition-all">TV & Live Shows</button>
+                <button onclick="filterSchedule('expo')" class="schedule-filter-btn px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider glass-panel text-gray-200 hover:text-white hover:border-neonCyan transition-all">Expos & Meet-Greets</button>
+            </div>
+
+            <!-- Schedule List -->
+            <div id="schedule-list" class="space-y-4">
+                
+                <!-- Event Row 1 -->
+                <div class="event-card ppv glass-panel glass-panel-hover p-6 rounded-2xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                    <div class="flex items-center gap-6 min-w-[200px]">
+                        <div class="text-center p-3 rounded-xl bg-slatelight border border-white/10 min-w-[70px]">
+                            <span class="block text-neonCyan text-xs font-bold uppercase tracking-wider">NOV</span>
+                            <span class="block font-display text-3xl text-white">14</span>
+                        </div>
+                        <div>
+                            <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-widest bg-neonPurple/30 text-neonPurple border border-neonPurple/40 mb-1">Big Daddy PPV</span>
+                            <h3 class="font-display text-2xl text-white tracking-wide">BATTLE FOR THE BELT</h3>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-gray-300 text-sm">
+                        <i class="fa-solid fa-location-dot text-neonCyan"></i>
+                        <div>
+                            <p class="font-semibold text-white">BOARDWALK HALL ARENA</p>
+                            <p class="text-xs text-gray-300">Atlantic City, NJ (Near Egg Harbor)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3 w-full lg:w-auto justify-between lg:justify-end border-t lg:border-t-0 pt-4 lg:pt-0 border-white/10">
+                        <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                            TICKETS AVAILABLE
+                        </span>
+                        <button onclick="triggerToast('Redirecting to Atlantic City ticket portal...')" class="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-neonCyan text-slatecard hover:bg-white transition-all shadow-neon-cyan">
+                            Buy Tickets
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event Row 2 -->
+                <div class="event-card live glass-panel glass-panel-hover p-6 rounded-2xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                    <div class="flex items-center gap-6 min-w-[200px]">
+                        <div class="text-center p-3 rounded-xl bg-slatelight border border-white/10 min-w-[70px]">
+                            <span class="block text-neonCyan text-xs font-bold uppercase tracking-wider">NOV</span>
+                            <span class="block font-display text-3xl text-white">22</span>
+                        </div>
+                        <div>
+                            <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-widest bg-neonCyan/20 text-neonCyan border border-neonCyan/30 mb-1">TV Broadcast</span>
+                            <h3 class="font-display text-2xl text-white tracking-wide">BIG DADDY FRIDAY NIGHT SUPERSHOW</h3>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-gray-300 text-sm">
+                        <i class="fa-solid fa-location-dot text-neonCyan"></i>
+                        <div>
+                            <p class="font-semibold text-white">METROPOLITAN ARENA</p>
+                            <p class="text-xs text-gray-300">Philadelphia, PA</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3 w-full lg:w-auto justify-between lg:justify-end border-t lg:border-t-0 pt-4 lg:pt-0 border-white/10">
+                        <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                            LIMITED SEATS
+                        </span>
+                        <button onclick="triggerToast('Redirecting to arena ticket office...')" class="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-neonCyan text-slatecard hover:bg-white transition-all shadow-neon-cyan">
+                            Buy Tickets
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event Row 3 -->
+                <div class="event-card expo glass-panel glass-panel-hover p-6 rounded-2xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                    <div class="flex items-center gap-6 min-w-[200px]">
+                        <div class="text-center p-3 rounded-xl bg-slatelight border border-white/10 min-w-[70px]">
+                            <span class="block text-neonCyan text-xs font-bold uppercase tracking-wider">DEC</span>
+                            <span class="block font-display text-3xl text-white">05</span>
+                        </div>
+                        <div>
+                            <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-widest bg-accentPink/20 text-accentPink border border-accentPink/30 mb-1">Fan Expo & VIP</span>
+                            <h3 class="font-display text-2xl text-white tracking-wide">EAST COAST WRESTLING EXPO</h3>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-gray-300 text-sm">
+                        <i class="fa-solid fa-location-dot text-neonCyan"></i>
+                        <div>
+                            <p class="font-semibold text-white">CONVENTION CENTER</p>
+                            <p class="text-xs text-gray-300">Newark, NJ</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3 w-full lg:w-auto justify-between lg:justify-end border-t lg:border-t-0 pt-4 lg:pt-0 border-white/10">
+                        <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                            VIP SOLD OUT
+                        </span>
+                        <button onclick="triggerToast('GA tickets still available')" class="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider glass-panel text-white hover:border-white transition-all">
+                            GA Tickets
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SMS Ticket Alerts Card -->
+            <div class="mt-12 glass-panel p-8 rounded-3xl border-neonPurple/40 flex flex-col lg:flex-row items-center justify-between gap-6 bg-gradient-to-r from-neonPurple/20 via-transparent to-neonCyan/20">
+                <div>
+                    <h3 class="font-display text-2xl text-white tracking-wide mb-1">NEVER MISS A GRANT K MATCH DROP</h3>
+                    <p class="text-gray-300 text-sm">Get instant SMS alerts for Big Daddy Promotions presales & VIP meet-and-greet links.</p>
+                </div>
+                <form onsubmit="handleSMSAlert(event)" class="flex items-center gap-2 w-full lg:w-auto max-w-md">
+                    <input type="tel" placeholder="+1 (555) 000-0000" required class="bg-slatelight/80 border border-white/15 rounded-full px-5 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-neonCyan w-full">
+                    <button type="submit" class="px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-neonPurple text-white hover:bg-neonCyan hover:text-slatecard transition-all shrink-0">
+                        SUBSCRIBE
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BIO & TALE OF THE TAPE SECTION -->
+    <section id="bio" class="py-24 relative bg-slatecard">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Tale of the Tape Profile -->
+                <div class="lg:col-span-5 glass-panel p-8 rounded-3xl border-white/10 relative overflow-hidden group">
+                    <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-neonPurple/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <!-- Portrait Graphic Container -->
+                    <div class="w-full h-80 rounded-2xl bg-gradient-to-br from-slatelight to-steelbg border border-white/10 flex flex-col items-center justify-center text-center p-6 mb-8 relative overflow-hidden">
+                        <i class="fa-solid fa-user-ninja text-7xl text-neonCyan mb-4 group-hover:scale-110 transition-all duration-500"></i>
+                        <span class="font-display text-2xl text-white">GRANT K</span>
+                        <span class="text-xs text-neonPurple font-bold uppercase tracking-widest mt-1">Big Daddy Promotions Heavyweight</span>
+                        
+                        <div class="absolute top-4 right-4 bg-neonPurple text-white text-[10px] font-black uppercase px-3 py-1 rounded-full shadow-neon-purple">
+                            CONTENDER
+                        </div>
+                    </div>
+
+                    <!-- Tale of the Tape Grid -->
+                    <h3 class="font-display text-xl text-white tracking-wider mb-4 border-b border-white/10 pb-2">
+                        TALE OF THE TAPE
+                    </h3>
+
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div class="bg-steelbg/60 p-3 rounded-xl border border-white/10">
+                            <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase block">Height</span>
+                            <span class="font-bold text-white text-base">5 FT 7 IN</span>
+                        </div>
+                        <div class="bg-steelbg/60 p-3 rounded-xl border border-white/10">
+                            <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase block">Hometown</span>
+                            <span class="font-bold text-white text-base">Egg Harbor, NJ</span>
+                        </div>
+                        <div class="bg-steelbg/60 p-3 rounded-xl border border-white/10">
+                            <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase block">Promotion</span>
+                            <span class="font-bold text-neonPurple text-base">Big Daddy Promo</span>
+                        </div>
+                        <div class="bg-steelbg/60 p-3 rounded-xl border border-white/10">
+                            <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase block">Example Finisher</span>
+                            <span class="font-bold text-neonCyan text-base">[JERSEY SLAM]</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 bg-steelbg/60 p-3 rounded-xl border border-white/10">
+                        <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase block mb-1">Signature Moves</span>
+                        <p class="text-xs text-gray-300 font-medium">
+                            Egg Harbor Suplex, Springboard Lariat, Big Daddy Powerbomb
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Bio Narrative -->
+                <div class="lg:col-span-7">
+                    <span class="text-neonPurple text-xs font-bold tracking-[0.3em] uppercase block mb-2">ATHLETE PROFILE</span>
+                    <h2 class="font-display text-4xl sm:text-5xl text-white tracking-wide mb-6">THE RISE OF GRANT K</h2>
+
+                    <p class="text-gray-200 leading-relaxed mb-8">
+                        Representing <strong class="text-white">Egg Harbor, New Jersey</strong>, Grant K has established himself as one of the most electric competitors in <strong class="text-neonCyan">Big Daddy Promotions</strong>. Standing at 5 ft 7 in, his rapid speed, explosive powerhouse maneuvers, and undeniable crowd charisma make him an essential main-event drawing card.
+                    </p>
+
+                    <!-- Interactive Accordions -->
+                    <div class="space-y-4">
+                        
+                        <!-- Accordion 1 -->
+                        <div class="glass-panel rounded-2xl border-white/10 overflow-hidden">
+                            <button onclick="toggleAccordion('acc-1')" class="w-full px-6 py-4 text-left flex items-center justify-between font-display text-xl text-white hover:text-neonCyan transition-colors">
+                                <span><i class="fa-solid fa-trophy mr-3 text-neonPurple"></i>CAREER ACCOLADES</span>
+                                <i id="acc-1-icon" class="fa-solid fa-chevron-down text-sm transition-transform"></i>
+                            </button>
+                            <div id="acc-1" class="hidden px-6 pb-6 text-sm text-gray-300 space-y-2 border-t border-white/10 pt-4">
+                                <p>• #1 Contender in Big Daddy Promotions</p>
+                                <p>• Egg Harbor Hometown Fan-Favorite Award</p>
+                                <p>• 2025 Match of the Year Nominee</p>
+                                <p>• Sold-out Main Eventer in Atlantic City, NJ</p>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 2 -->
+                        <div class="glass-panel rounded-2xl border-white/10 overflow-hidden">
+                            <button onclick="toggleAccordion('acc-2')" class="w-full px-6 py-4 text-left flex items-center justify-between font-display text-xl text-white hover:text-neonCyan transition-colors">
+                                <span><i class="fa-solid fa-music mr-3 text-neonCyan"></i>ENTRANCE THEME</span>
+                                <i id="acc-2-icon" class="fa-solid fa-chevron-down text-sm transition-transform"></i>
+                            </button>
+                            <div id="acc-2" class="hidden px-6 pb-6 text-sm text-gray-300 border-t border-white/10 pt-4">
+                                <p class="mb-3">Official Theme: <strong class="text-white">&ldquo;Unstoppable High-Octane&rdquo;</strong> (Big Daddy Entrance Cut)</p>
+                                <div class="flex items-center gap-3 bg-steelbg p-3 rounded-xl border border-white/10">
+                                    <button onclick="triggerToast('Playing entrance track preview...')" class="w-10 h-10 rounded-full bg-neonCyan text-slatecard flex items-center justify-center hover:scale-105 transition-transform">
+                                        <i class="fa-solid fa-play"></i>
+                                    </button>
+                                    <div class="flex-1">
+                                        <div class="h-2 bg-slatelight rounded-full overflow-hidden">
+                                            <div class="w-2/5 h-full bg-neonCyan"></div>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-400">1:12 / 3:15</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="py-24 relative bg-steelbg border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-white/10">
+                <div>
+                    <span class="text-neonCyan text-xs font-bold tracking-[0.3em] uppercase block mb-2">ACTION ARCHIVE</span>
+                    <h2 class="font-display text-4xl sm:text-5xl text-white tracking-wide">GRANT K GALLERY</h2>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
+                    <button onclick="filterGallery('all')" class="gallery-filter-btn active px-4 py-1.5 rounded-full text-xs font-bold uppercase bg-neonCyan text-slatecard transition-all">All</button>
+                    <button onclick="filterGallery('ring')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-bold uppercase glass-panel text-gray-200 hover:text-white transition-all">In-Ring</button>
+                    <button onclick="filterGallery('promos')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-bold uppercase glass-panel text-gray-200 hover:text-white transition-all">Promos</button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="gallery-item ring glass-panel rounded-2xl overflow-hidden group cursor-pointer border-white/10 hover:border-neonCyan transition-all duration-300" onclick="openLightbox('Grant K Atlantic City Main Event', 'In-Ring Action')">
+                    <div class="relative h-64 bg-slatelight flex items-center justify-center overflow-hidden">
+                        <i class="fa-solid fa-camera text-5xl text-gray-500 group-hover:scale-125 group-hover:text-neonCyan transition-all duration-500"></i>
+                        <span class="absolute top-4 left-4 z-20 px-2.5 py-1 rounded text-[10px] font-extrabold uppercase bg-neonPurple text-white">In-Ring</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-display text-xl text-white tracking-wide group-hover:text-neonCyan transition-colors">MAIN EVENT IN ATLANTIC CITY</h4>
+                        <p class="text-xs text-gray-300">Grant K electrifies his home state NJ fans</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item promos glass-panel rounded-2xl overflow-hidden group cursor-pointer border-white/10 hover:border-neonCyan transition-all duration-300" onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                    <div class="relative h-64 bg-slatelight flex items-center justify-center overflow-hidden">
+                        <i class="fa-solid fa-circle-play text-6xl text-neonCyan/80 group-hover:scale-125 group-hover:text-neonCyan transition-all duration-500"></i>
+                        <span class="absolute top-4 left-4 z-20 px-2.5 py-1 rounded text-[10px] font-extrabold uppercase bg-neonCyan text-slatecard">Promo Video</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-display text-xl text-white tracking-wide group-hover:text-neonCyan transition-colors">BIG DADDY PROMO MIC WORK</h4>
+                        <p class="text-xs text-gray-300">Grant K addresses the Heavyweight Champion</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item ring glass-panel rounded-2xl overflow-hidden group cursor-pointer border-white/10 hover:border-neonCyan transition-all duration-300" onclick="openLightbox('Springboard Finisher Execution', 'In-Ring Action')">
+                    <div class="relative h-64 bg-slatelight flex items-center justify-center overflow-hidden">
+                        <i class="fa-solid fa-bolt text-5xl text-amber-400 group-hover:scale-125 transition-all duration-500"></i>
+                        <span class="absolute top-4 left-4 z-20 px-2.5 py-1 rounded text-[10px] font-extrabold uppercase bg-accentPink text-white">High-Flying</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-display text-xl text-white tracking-wide group-hover:text-neonCyan transition-colors">MID-AIR FINISHER</h4>
+                        <p class="text-xs text-gray-300">Grant K delivers a signature move from the top rope</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MERCHANDISE STORE -->
+    <section id="store" class="py-24 relative bg-slatecard">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-white/10">
+                <div>
+                    <span class="text-neonPurple text-xs font-bold tracking-[0.3em] uppercase block mb-2">OFFICIAL MERCH DROP</span>
+                    <h2 class="font-display text-4xl sm:text-5xl text-white tracking-wide">GRANT K APPAREL & GEAR</h2>
+                </div>
+                <button onclick="triggerToast('Opening shop portal...')" class="mt-4 md:mt-0 text-neonCyan hover:text-white font-bold text-sm tracking-wider uppercase flex items-center gap-2 group">
+                    <span>View Store Catalog</span>
+                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+
+            <!-- Product Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col justify-between group">
+                    <div>
+                        <div class="w-full h-56 rounded-xl bg-steelbg border border-white/10 flex items-center justify-center mb-4 relative overflow-hidden">
+                            <i class="fa-solid fa-shirt text-6xl text-gray-500 group-hover:text-neonPurple transition-colors duration-300"></i>
+                            <span class="absolute top-3 right-3 bg-neonPurple text-white text-[9px] font-black uppercase px-2 py-0.5 rounded">NEW</span>
+                        </div>
+                        <h3 class="font-display text-xl text-white tracking-wide">GRANT K "UNSTOPPABLE" TEE</h3>
+                        <p class="text-xs text-gray-300 mb-2">Big Daddy Promotions Official Tee</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-white/10 mt-4">
+                        <span class="font-display text-2xl text-neonCyan">$34.99</span>
+                        <button onclick="openMerchDrawer('GRANT K UNSTOPPABLE TEE', '$34.99')" class="px-4 py-2 rounded-full text-xs font-bold uppercase bg-white/10 hover:bg-neonCyan hover:text-slatecard text-white transition-all">
+                            Quick View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col justify-between group">
+                    <div>
+                        <div class="w-full h-56 rounded-xl bg-steelbg border border-white/10 flex items-center justify-center mb-4 relative overflow-hidden">
+                            <i class="fa-solid fa-vest text-6xl text-gray-500 group-hover:text-neonCyan transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="font-display text-xl text-white tracking-wide">EGG HARBOR NJ HOODIE</h3>
+                        <p class="text-xs text-gray-300 mb-2">Heavy Fleece Pullover</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-white/10 mt-4">
+                        <span class="font-display text-2xl text-neonCyan">$69.99</span>
+                        <button onclick="openMerchDrawer('EGG HARBOR NJ HOODIE', '$69.99')" class="px-4 py-2 rounded-full text-xs font-bold uppercase bg-white/10 hover:bg-neonCyan hover:text-slatecard text-white transition-all">
+                            Quick View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col justify-between group">
+                    <div>
+                        <div class="w-full h-56 rounded-xl bg-steelbg border border-white/10 flex items-center justify-center mb-4 relative overflow-hidden">
+                            <i class="fa-solid fa-file-signature text-6xl text-gray-500 group-hover:text-accentPink transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="font-display text-xl text-white tracking-wide">AUTOGRAPHED PROMO PRINT</h3>
+                        <p class="text-xs text-gray-300 mb-2">Hand-signed Grant K Photo</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-white/10 mt-4">
+                        <span class="font-display text-2xl text-neonCyan">$24.99</span>
+                        <button onclick="openMerchDrawer('AUTOGRAPHED PROMO PRINT', '$24.99')" class="px-4 py-2 rounded-full text-xs font-bold uppercase bg-white/10 hover:bg-neonCyan hover:text-slatecard text-white transition-all">
+                            Quick View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col justify-between group">
+                    <div>
+                        <div class="w-full h-56 rounded-xl bg-steelbg border border-white/10 flex items-center justify-center mb-4 relative overflow-hidden">
+                            <i class="fa-solid fa-hat-cowboy text-6xl text-gray-500 group-hover:text-amber-400 transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="font-display text-xl text-white tracking-wide">GRANT K SNAPBACK CAP</h3>
+                        <p class="text-xs text-gray-300 mb-2">Embroidered Logo Cap</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-white/10 mt-4">
+                        <span class="font-display text-2xl text-neonCyan">$29.99</span>
+                        <button onclick="openMerchDrawer('GRANT K SNAPBACK CAP', '$29.99')" class="px-4 py-2 rounded-full text-xs font-bold uppercase bg-white/10 hover:bg-neonCyan hover:text-slatecard text-white transition-all">
+                            Quick View
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EPK & BOOKING -->
+    <section id="booking" class="py-24 relative bg-steelbg border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left: Press Kit -->
+                <div class="lg:col-span-5">
+                    <span class="text-neonCyan text-xs font-bold tracking-[0.3em] uppercase block mb-2">PRESS & MEDIA</span>
+                    <h2 class="font-display text-4xl text-white tracking-wide mb-6">ELECTRONIC PRESS KIT</h2>
+                    
+                    <p class="text-gray-300 text-sm leading-relaxed mb-8">
+                        Download official promotional press kits, high-resolution action photos, and logos for Grant K and Big Daddy Promotions event scheduling.
+                    </p>
+
+                    <div class="space-y-4">
+                        <a href="javascript:void(0)" onclick="triggerToast('Downloading Grant K Hi-Res Photo Kit...')" class="glass-panel p-4 rounded-2xl flex items-center justify-between border-white/10 hover:border-neonCyan transition-all group">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-neonPurple/20 text-neonPurple flex items-center justify-center">
+                                    <i class="fa-solid fa-file-zipper text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm group-hover:text-neonCyan transition-colors">Grant K High-Res Photo Pack</h4>
+                                    <span class="text-xs text-gray-400">ZIP File (38 MB)</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-download text-gray-400 group-hover:text-white transition-colors"></i>
+                        </a>
+
+                        <a href="javascript:void(0)" onclick="triggerToast('Downloading Bio Sheet...')" class="glass-panel p-4 rounded-2xl flex items-center justify-between border-white/10 hover:border-neonCyan transition-all group">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-neonCyan/20 text-neonCyan flex items-center justify-center">
+                                    <i class="fa-solid fa-file-pdf text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm group-hover:text-neonCyan transition-colors">Official Bio & Big Daddy Promo Sheet</h4>
+                                    <span class="text-xs text-gray-400">PDF Document (2 MB)</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-download text-gray-400 group-hover:text-white transition-colors"></i>
+                        </a>
+                    </div>
+
+                    <div class="mt-8 p-6 rounded-2xl bg-slatecard border border-white/10">
+                        <h4 class="font-display text-lg text-white tracking-wide mb-3">BOOKING & AGENCY CONTACTS</h4>
+                        <div class="space-y-2 text-xs text-gray-300">
+                            <p><strong class="text-gray-400">Match Booking:</strong> booking@grantkwrestling.com</p>
+                            <p><strong class="text-gray-400">Big Daddy Promo Office:</strong> contact@bigdaddypromotions.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="lg:col-span-7 glass-panel p-8 rounded-3xl border-white/10">
+                    <h3 class="font-display text-2xl text-white tracking-wide mb-2">BOOKING & INQUIRY FORM</h3>
+                    <p class="text-gray-300 text-xs mb-6">Submit requests for Grant K wrestling matches, conventions, or interviews.</p>
+
+                    <form onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-300 mb-1">Promoter or Agency *</label>
+                                <input type="text" required placeholder="Organization Name" class="w-full bg-steelbg border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neonCyan">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-300 mb-1">Contact Email *</label>
+                                <input type="email" required placeholder="email@domain.com" class="w-full bg-steelbg border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neonCyan">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-300 mb-1">Event Type *</label>
+                                <select class="w-full bg-steelbg border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neonCyan">
+                                    <option>Big Daddy Promotions Match</option>
+                                    <option>Autograph Signing / Convention</option>
+                                    <option>Media Interview / Podcast</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-300 mb-1">Event Date</label>
+                                <input type="date" class="w-full bg-steelbg border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neonCyan">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-300 mb-1">Inquiry Details *</label>
+                            <textarea rows="4" required placeholder="Provide details regarding venue, offer, and show requirements..." class="w-full bg-steelbg border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neonCyan"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-widest bg-gradient-to-r from-neonPurple to-neonCyan text-white shadow-neon-purple hover:shadow-neon-glow transition-all">
+                            SUBMIT GRANT K INQUIRY
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-steelbg py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+            
+            <a href="#" class="font-display text-3xl tracking-widest text-white mb-2">
+                GRANT <span class="text-neonCyan">K</span>
+            </a>
+            <span class="text-xs uppercase tracking-widest text-neonPurple font-bold mb-6">BIG DADDY PROMOTIONS</span>
+
+            <div class="flex items-center space-x-6 mb-8 text-xl">
+                <a href="javascript:void(0)" onclick="triggerToast('Opening Grant K Instagram...')" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-gray-300 hover:text-neonCyan hover:border-neonCyan transition-all"><i class="fa-brands fa-instagram"></i></a>
+                <a href="javascript:void(0)" onclick="triggerToast('Opening Grant K X...')" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-gray-300 hover:text-neonCyan hover:border-neonCyan transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="javascript:void(0)" onclick="triggerToast('Opening YouTube channel...')" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-gray-300 hover:text-neonCyan hover:border-neonCyan transition-all"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+
+            <p class="text-xs text-gray-400">
+                &copy; 2026 Grant K / Big Daddy Promotions Official Site. Hometown: Egg Harbor, NJ. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+    <!-- Fan Club Modal -->
+    <div id="fan-club-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="glass-panel max-w-md w-full p-8 rounded-3xl border-neonCyan/40 relative shadow-neon-glow">
+            <button onclick="closeModal('fan-club-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-neonCyan/20 text-neonCyan flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-crown text-2xl"></i>
+                </div>
+                <h3 class="font-display text-3xl text-white tracking-wide">GRANT K FAN CLUB</h3>
+                <p class="text-xs text-gray-300 mt-1">Get ticket presale codes for Big Daddy Promotions shows and exclusive merch drops.</p>
+            </div>
+
+            <form onsubmit="handleFanClubSubmit(event)" class="space-y-4">
+                <div>
+                    <input type="text" required placeholder="First & Last Name" class="w-full bg-steelbg border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neonCyan">
+                </div>
+                <div>
+                    <input type="email" required placeholder="Email Address" class="w-full bg-steelbg border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neonCyan">
+                </div>
+                <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-widest bg-gradient-to-r from-neonPurple to-neonCyan text-white shadow-neon-purple">
+                    JOIN INNER CIRCLE
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Video Promo Modal -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
+        <div class="max-w-4xl w-full relative">
+            <button onclick="closeModal('video-modal')" class="absolute -top-10 right-0 text-white text-2xl hover:text-neonCyan">
+                <i class="fa-solid fa-xmark"></i> Close Video
+            </button>
+            <div class="aspect-video w-full rounded-2xl overflow-hidden glass-panel">
+                <iframe id="modal-video-iframe" class="w-full h-full" src="" title="Grant K Video Promo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Merch Drawer Modal -->
+    <div id="merch-modal" class="fixed inset-0 z-50 hidden flex items-center justify-end bg-black/70 backdrop-blur-sm">
+        <div class="glass-panel w-full max-w-md h-full p-8 border-l border-white/10 flex flex-col justify-between overflow-y-auto">
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                    <h3 id="merch-modal-title" class="font-display text-2xl text-white">GRANT K MERCH</h3>
+                    <button onclick="closeModal('merch-modal')" class="text-gray-400 hover:text-white text-xl">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div class="w-full h-64 rounded-2xl bg-steelbg border border-white/10 flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-box-open text-7xl text-neonCyan"></i>
+                </div>
+
+                <div class="flex items-center justify-between mb-4">
+                    <span id="merch-modal-price" class="font-display text-3xl text-neonCyan">$00.00</span>
+                    <span class="text-xs font-bold uppercase text-emerald-300 bg-emerald-500/20 px-3 py-1 rounded">IN STOCK</span>
+                </div>
+
+                <p class="text-sm text-gray-300 leading-relaxed mb-6">
+                    Official Grant K merchandise item. Authentic Big Daddy Promotions item with high-quality printing and stitching.
+                </p>
+            </div>
+
+            <button onclick="triggerToast('Item added to cart!'); closeModal('merch-modal');" class="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-widest bg-neonCyan text-slatecard hover:bg-white transition-all shadow-neon-cyan">
+                ADD TO CART
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Particle Background
+        const canvas = id => document.getElementById(id);
+        const ctx = canvas('hero-canvas').getContext('2d');
+        let width, height, particles = [];
+
+        function resizeCanvas() {
+            width = canvas('hero-canvas').width = window.innerWidth;
+            height = canvas('hero-canvas').height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        for (let i = 0; i < 35; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                radius: Math.random() * 2 + 1,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                color: Math.random() > 0.5 ? '#a855f7' : '#06b6d4'
+            });
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0 || p.x > width) p.vx *= -1;
+                if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Modals
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            if(id === 'video-modal') {
+                document.getElementById('modal-video-iframe').src = '';
+            }
+        }
+
+        function openVideoModal(url) {
+            document.getElementById('modal-video-iframe').src = url;
+            openModal('video-modal');
+        }
+
+        function openMerchDrawer(title, price) {
+            document.getElementById('merch-modal-title').innerText = title;
+            document.getElementById('merch-modal-price').innerText = price;
+            openModal('merch-modal');
+        }
+
+        function openLightbox(title, category) {
+            triggerToast(`Viewing Preview: ${title}`);
+        }
+
+        // Accordion
+        function toggleAccordion(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                el.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Filters
+        function filterSchedule(category) {
+            const buttons = document.querySelectorAll('.schedule-filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-neonPurple', 'text-white');
+                btn.classList.add('glass-panel', 'text-gray-200');
+            });
+            event.target.classList.add('active', 'bg-neonPurple', 'text-white');
+
+            const cards = document.querySelectorAll('.event-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function filterGallery(category) {
+            const buttons = document.querySelectorAll('.gallery-filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-neonCyan', 'text-slatecard');
+                btn.classList.add('glass-panel', 'text-gray-200');
+            });
+            event.target.classList.add('active', 'bg-neonCyan', 'text-slatecard');
+
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Toast Notification System
+        function triggerToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'glass-panel border-neonCyan/50 px-5 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider text-white shadow-neon-cyan flex items-center gap-3 animate-bounce pointer-events-auto';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-neonCyan text-base"></i><span>${message}</span>`;
+            
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        // Form Submission Handlers
+        function handleSMSAlert(e) {
+            e.preventDefault();
+            triggerToast('Subscribed to Grant K tour presale alerts!');
+            e.target.reset();
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            triggerToast('Grant K booking inquiry submitted!');
+            e.target.reset();
+        }
+
+        function handleFanClubSubmit(e) {
+            e.preventDefault();
+            closeModal('fan-club-modal');
+            triggerToast('Welcome to the Grant K Fan Club!');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
